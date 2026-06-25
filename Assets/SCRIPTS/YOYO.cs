@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class YOYO : MonoBehaviour
 {
@@ -41,7 +42,7 @@ public class YOYO : MonoBehaviour
     {
         if(other.gameObject.tag == "Target")
         {
-            Destroy.otherGameObject;
+            //Destroy.otherGameObject;
         }
 
         if(other.gameObject.tag == "Obstacle")
@@ -50,7 +51,7 @@ public class YOYO : MonoBehaviour
         }
     }
 
-    public void HowManyYos(Scene scene)
+    public HowManyYos(Scene scene)
     {
         if(scene.name == "LEVEL 1")
         {
@@ -73,12 +74,12 @@ public class YOYO : MonoBehaviour
         }
     }
 
-     public void Yo()
+     public Yo(HowManyYos yosLeft, scene)
     {
-        if(yo > 0)
+        if(yosLeft > 0)
         {
             Shoot();
-            yo--;
+            yosLeft--;
         }
     }
 
