@@ -538,6 +538,11 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
+--- !u!4 &677931101 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8911837242879790105, guid: e8adeef540f568f4abbbae3ebe2dcd6f, type: 3}
+  m_PrefabInstance: {fileID: 5914196697146584731}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &677931102
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -550,8 +555,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48c48ee0440f84a42833c5a5cdefd010, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PLAYER
-  playerRB: {fileID: 0}
-  playerTransform: {fileID: 0}
+  playerRB: {fileID: 677931092}
+  playerTransform: {fileID: 677931101}
   yosLeft: 2
   LevelNumber: 0
   yoyoTransform: {fileID: 204882995}

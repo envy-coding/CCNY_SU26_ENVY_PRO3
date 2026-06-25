@@ -11,7 +11,14 @@ public class YOYO : MonoBehaviour
 
     public GameObject yoyo;
 
-    
+    //yoyo
+    public int yosLeft;
+    public int LevelNumber;
+
+    public static void QuerySceneInfo(Scene scene)
+    {
+        Debug.Log(scene.name);
+    }
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -24,11 +31,58 @@ public class YOYO : MonoBehaviour
     {
         if(Input.GetKeyUp(KeyCode.Space))
         {
-            Move();
+            Yo();
+        }
+
+       
+    }
+
+    public void OnCollisionEnter(Collider other)
+    {
+        if(other.gameObject.tag == "Target")
+        {
+            Destroy.otherGameObject;
+        }
+
+        if(other.gameObject.tag == "Obstacle")
+        {
+            //BOUNCE OFF OBJECT
         }
     }
 
-    public void Move()
+    public void HowManyYos(Scene scene)
+    {
+        if(scene.name == "LEVEL 1")
+        {
+            yosLeft = 1;
+        }
+
+        if(scene.name == "LEVEL 2")
+        {
+            yosLeft = 2;
+        }
+
+        if(scene.name == "LEVEL 3")
+        {
+            yosLeft = 3;
+        }
+
+        if(scene.name == "TUTORIAL")
+        {
+            yosLeft = 10;
+        }
+    }
+
+     public void Yo()
+    {
+        if(yo > 0)
+        {
+            Shoot();
+            yo--;
+        }
+    }
+
+    public void Shoot()
     {
         float x = Mathf.Sin(Time.time * frequency) * amplitude;
         float y = this.transform.position.y;
