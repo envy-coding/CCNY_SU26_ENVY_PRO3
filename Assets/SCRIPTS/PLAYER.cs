@@ -3,40 +3,52 @@ using UnityEngine.SceneManagement;
 
 public class PLAYER : MonoBehaviour
 {
-    public Rigidbody rB;
-    
-    //movement
-    public float horizontalInput;
-    public float speed;
+    public Rigidbody playerRB;
+    public Transform playerTransform;
 
     //yoyo
     public int yosLeft;
     public int LevelNumber;
+
+    public Transform yoyoTransform;
+    public Rigidbody yoyoRB;
+
+    //wave variables
+    private int amplitude = 1;
+    private int frequency = 1;
+
+    public GameObject yoyo;
 
 
     public static void QuerySceneInfo(Scene scene)
     {
         Debug.Log(scene.name);
     }
+    
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-       speed = 10;
        
+       yoyoTransform = GetComponent<Transform>();
+       
+       
+
+       playerTransform = GetComponent<Transform>();
        
     }
 
     // Update is called once per frame
     void Update()
     {
-        Shoot();
-        Turn();
+        Turn(); 
+        Yo();
+
+        if(Input.GetKeyDown(KeyCode.Space))
+        {
+            Shoot();    
+        }
     }
 
-    private void FixedUpdate()
-    {
-        rB.linearVelocity = new Vector2(horizontalInput * speed, rB.linearVelocity.x);
-    }
 
     public void Yo()
     {
@@ -48,22 +60,23 @@ public class PLAYER : MonoBehaviour
 
     public void Shoot()
     {
-        if(Input.GetKeyDown(KeyCode.Space))
-        {
-            //shoot yoyo
-        }
+        float x = Mathf.Sin(Time.time * frequency) * amplitude;
+        float y = this.transform.position.y;
+        float z = this.transform.position.z;
+
+        this.yoyoTransform.position = new Vector3(x, y, z);
     }
 
     public void Turn()
     {
         if(Input.GetKeyDown(KeyCode.LeftArrow))
         {
-            //turn left
+            playerTransform.rotation = Quaternion.Euler(0, 180, 0);
         }
 
         if(Input.GetKeyDown(KeyCode.RightArrow))
         {
-            //turn right
+            playerTransform.rotation = Quaternion.Euler(0, -180, 0);
         }
     }
 
