@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -38,7 +39,7 @@ public class YOYO : MonoBehaviour
        
     }
 
-    public void OnCollisionEnter(Collider other)
+    void CollisionEnter(Collider other)
     {
         if(other.gameObject.tag == "Target")
         {
@@ -51,7 +52,7 @@ public class YOYO : MonoBehaviour
         }
     }
 
-    public HowManyYos(Scene scene)
+    public void HowManyYos(Scene scene)
     {
         if(scene.name == "LEVEL 1")
         {
@@ -74,7 +75,7 @@ public class YOYO : MonoBehaviour
         }
     }
 
-     public Yo(HowManyYos yosLeft, scene)
+    public void Yo()
     {
         if(yosLeft > 0)
         {
