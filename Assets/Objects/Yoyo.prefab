@@ -10,6 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1462630848530559474}
   - component: {fileID: -1726482401142995770}
+  - component: {fileID: -921142336649543064}
+  - component: {fileID: -3191050126704992241}
   m_Layer: 0
   m_Name: Yoyo
   m_TagString: Yoyo
@@ -54,6 +56,50 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &-921142336649543064
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4121842116682356452}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be7aa67c44126f44eac3d8698f89c0e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::YOYO
+  yoyoTransform: {fileID: 1462630848530559474}
+  rB: {fileID: -3191050126704992241}
+  yoyo: {fileID: 4121842116682356452}
+  yosLeft: 0
+  LevelNumber: 0
+--- !u!54 &-3191050126704992241
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4121842116682356452}
+  serializedVersion: 5
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &4641772868132205195
 GameObject:
   m_ObjectHideFlags: 0
