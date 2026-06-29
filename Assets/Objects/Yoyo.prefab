@@ -11,7 +11,8 @@ GameObject:
   - component: {fileID: 1462630848530559474}
   - component: {fileID: -1726482401142995770}
   - component: {fileID: -921142336649543064}
-  - component: {fileID: -3191050126704992241}
+  - component: {fileID: 7236059090206675178}
+  - component: {fileID: 1563724577176299860}
   m_Layer: 0
   m_Name: Yoyo
   m_TagString: Yoyo
@@ -69,11 +70,32 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::YOYO
   yoyoTransform: {fileID: 1462630848530559474}
-  rB: {fileID: -3191050126704992241}
+  rB: {fileID: 0}
   yoyo: {fileID: 4121842116682356452}
   yosLeft: 0
   LevelNumber: 0
---- !u!54 &-3191050126704992241
+--- !u!65 &7236059090206675178
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4121842116682356452}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!54 &1563724577176299860
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -96,7 +118,7 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0

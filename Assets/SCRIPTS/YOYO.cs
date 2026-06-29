@@ -39,17 +39,12 @@ public class YOYO : MonoBehaviour
        
     }
 
-    void CollisionEnter(Collider other)
-    {
-        if(other.gameObject.tag == "Target")
-        {
-            //Destroy.otherGameObject;
-        }
-
-        if(other.gameObject.tag == "Obstacle")
-        {
-            //BOUNCE OFF OBJECT
-        }
+    void OnTriggerEnter(Collider collider)
+    {   
+        if(collider.gameObject.name == "TARGET")
+            {
+                Destroy(collider.gameObject);
+            } 
     }
 
     public void HowManyYos(Scene scene)

@@ -1,16 +1,22 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MENUMANAGER : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public void Awake()
     {
-        
+        GAMEMANAGER.OnGameStateChanged += GameManagerOnGameStateChanged;
     }
 
-    // Update is called once per frame
-    void Update()
+    public void OnDestroy()
     {
-        
+        GAMEMANAGER.OnGameStateChanged -= GameManagerOnGameStateChanged;
+    }
+
+
+    public void GameManagerOnGameStateChanged(GameState state)
+    {
+        SceneManager.LoadScene("MAIN MENU");
     }
 }
