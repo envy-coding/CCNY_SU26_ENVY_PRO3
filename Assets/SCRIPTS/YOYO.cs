@@ -7,10 +7,6 @@ public class YOYO : MonoBehaviour
     public Transform yoyoTransform;
     public Rigidbody rB;
 
-    //wave variables
-    private int amplitude = 1;
-    private int frequency = 1;
-
     public GameObject yoyo;
 
     //yoyo
@@ -39,11 +35,11 @@ public class YOYO : MonoBehaviour
        
     }
 
-    void OnTriggerEnter(Collider collider)
+    public void OnTriggerEnter(Collider other)
     {   
-        if(collider.gameObject.name == "TARGET")
+        if(other.gameObject.tag == "Target")
             {
-                Destroy(collider.gameObject);
+                Destroy(other.gameObject);
             } 
     }
 
@@ -81,11 +77,7 @@ public class YOYO : MonoBehaviour
 
     public void Shoot()
     {
-        float x = Mathf.Sin(Time.time * frequency) * amplitude;
-        float y = this.transform.position.y;
-        float z = this.transform.position.z;
-
-        this.yoyoTransform.position = new Vector3(x, y, z);
+        rB.AddForce(Vector3.right * 500);
     }
 
 
